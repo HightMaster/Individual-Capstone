@@ -4,17 +4,19 @@
       max-width="344"
     >
       <v-img
-        height="200px"
-        :src="series[0].img"
+        height="500px"
+        :src="series.img"
+        lazy-src="https://media.wired.com/photos/5f87340d114b38fa1f8339f9/master/w_1600%2Cc_limit/Ideas_Surprised_Pikachu_HD.jpg"
+        aspect-ratio="4/3"
         cover
       ></v-img>
   
       <v-card-title>
-        Top western road trips
+        {{ series.title }}
       </v-card-title>
   
       <v-card-subtitle>
-        1,000 miles of wonder
+        {{ series.description }}
       </v-card-subtitle>
   
       <v-card-actions>
