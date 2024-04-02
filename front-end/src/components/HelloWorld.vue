@@ -150,6 +150,7 @@
       </v-row>
     </v-responsive>
   </v-container>
+  
 </template>
 
 <script setup>
