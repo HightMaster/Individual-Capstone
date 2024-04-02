@@ -44,11 +44,8 @@
       </v-expand-transition>
     </v-card>
   </template>
-  <script>
-    export default {
-      data: () => ({
-        show: false,
-      }),
-      props: ['imgLink']
-    }
+  <script setup>
+    import { ref } from 'vue'
+    let props = defineProps(['imgLink'])
+    let show = ref(false)
   </script>
