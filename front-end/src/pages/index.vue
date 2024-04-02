@@ -4,7 +4,7 @@
     {
       title:"Avatar The Last Airbender",
       liked: true,
-      rating: 10,
+      rating: 8,
       description:"Very Cool animated series",
       img:"https://foreveryoungadult.com/wp-content/uploads/2021/10/Avatar-the-last-Airbender-Cover.jpg"
     },

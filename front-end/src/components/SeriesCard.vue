@@ -2,6 +2,7 @@
     <v-card
       class="mx-auto"
       max-width="344"
+      elevation="13"
     >
       <v-img
         height="500px"
@@ -54,8 +55,7 @@
           </template>
         </v-dialog>
         <v-spacer></v-spacer>
-        <v-btn icon="mdi-minus"></v-btn>
-    
+        {{ series.rating }}/10
         <v-btn
           :icon="liked ? 'mdi-heart' : 'mdi-heart-outline'"
           @click="liked = !liked"
