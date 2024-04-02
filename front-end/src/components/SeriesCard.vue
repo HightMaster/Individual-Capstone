@@ -18,21 +18,46 @@
       <v-card-subtitle>
         {{ series.description }}
       </v-card-subtitle>
-  
+      
       <v-card-actions>
-        <v-btn
-          color="orange-lighten-2"
-          variant="text"
-        >
-          Details
-        </v-btn>
-  
+        <v-dialog max-width="600">
+            <template v-slot:activator="{ props: activatorProps}">
+              <v-btn
+                color="orange-lighten-2"
+                variant="text"
+                v-bind="activatorProps"
+              >
+                Edit
+              </v-btn>
+          </template>
+          <template v-slot:default="{ isActive }">
+            <v-card :title="series.title">
+              <v-card-text>
+                <v-form>
+                  <v-text-field prepend-icon="mdi-format-title" label="Series title" :placeholder="series.title" clearable
+                  ></v-text-field>
+                  <v-text-field prepend-icon="mdi-image-area" label="img link" :placeholder="series.img" clearable
+                  ></v-text-field>
+                  <v-text-field prepend-icon="mdi-image-text" label="Description" :placeholder="series.description" clearable
+                  ></v-text-field>
+                </v-form>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                  icon="mdi-fullscreen-exit"
+                  text="Close"
+                  @click="isActive.value = false"
+                ></v-btn>
+              </v-card-actions>
+            </v-card>
+          </template>
+        </v-dialog>
         <v-spacer></v-spacer>
         <v-btn icon="mdi-minus"></v-btn>
-        <v-btn icon="mdi-plus"></v-btn>
     
         <v-btn
-          :icon="liked ? 'mdi-thumb-up' : 'mdi-thumb-up-outline'"
+          :icon="liked ? 'mdi-heart' : 'mdi-heart-outline'"
           @click="liked = !liked"
         ></v-btn>
         

@@ -26,11 +26,15 @@
 </script>
 
 <template>
+
+  <v-navigation-drawer expand-on-hover rail>
+      
+  </v-navigation-drawer>
   <v-container>
     <v-row >
       <v-col
         v-for="series in seriesData"
-        :key="n"
+        :key="series.title"
         cols="12"
         sm="4"
       >
