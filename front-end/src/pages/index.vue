@@ -1,5 +1,14 @@
 <script setup>
   //
+  let seriesData = [
+    {
+      title:"Avatar The Last Airbender",
+      liked: true,
+      rating: 10,
+      description:"Very Cool animated series",
+      img:"https://foreveryoungadult.com/wp-content/uploads/2021/10/Avatar-the-last-Airbender-Cover.jpg"
+    }
+  ]
 </script>
 
 <template>
@@ -11,7 +20,7 @@
         cols="12"
         sm="4"
       >
-        <SeriesCard imgLink="https://picsum.photos/200/300"/>
+        <SeriesCard :series="seriesData"/>
       </v-col>
     </v-row>
   </v-container>

@@ -5,7 +5,7 @@
     >
       <v-img
         height="200px"
-        :src="imgLink"
+        :src="series[0].img"
         cover
       ></v-img>
   
@@ -22,21 +22,23 @@
           color="orange-lighten-2"
           variant="text"
         >
-          Explore
+          Details
         </v-btn>
   
         <v-spacer></v-spacer>
-  
+        <v-btn icon="mdi-minus"></v-btn>
+        <v-btn icon="mdi-plus"></v-btn>
+    
         <v-btn
-          :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-          @click="show = !show"
+          :icon="liked ? 'mdi-thumb-up' : 'mdi-thumb-up-outline'"
+          @click="liked = !liked"
         ></v-btn>
+        
       </v-card-actions>
   
       <v-expand-transition>
-        <div v-show="show">
-          <v-divider></v-divider>
-  
+        <div v-if="liked">
+          <v-divider :thickness="1" color=""info></v-divider>
           <v-card-text>
             I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
           </v-card-text>
@@ -46,6 +48,6 @@
   </template>
   <script setup>
     import { ref } from 'vue'
-    let props = defineProps(['imgLink'])
-    let show = ref(false)
+    let props = defineProps(['series'])
+    let liked = defineModel(false)
   </script>
