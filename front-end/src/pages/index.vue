@@ -23,20 +23,26 @@
       img:"https://pbs.twimg.com/media/CumMf0GWgAAOsjJ?format=jpg&name=4096x4096"
     }
   ]
+
+  let navItems = [
+    {
+      text: "About",
+      icon: "mdi-information",
+      route: "/about"
+    }
+  ]
 </script>
 
 <template>
 
-  <v-navigation-drawer expand-on-hover rail>
-      
-  </v-navigation-drawer>
+  <NavBar :navItems="navItems"></NavBar>
   <v-container>
     <v-row >
       <v-col
         v-for="series in seriesData"
         :key="series.title"
         cols="12"
-        sm="4"
+        sm="2"
       >
         <SeriesCard :series="series"/>
       </v-col>
