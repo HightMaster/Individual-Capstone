@@ -4,7 +4,7 @@
       max-width="344"
       elevation="13"
     >
-      <router-link to="/series_details">
+      <router-link :to="'/series_details/' + series.id">
         <v-img
           height="300px"
           :src="series.img"
