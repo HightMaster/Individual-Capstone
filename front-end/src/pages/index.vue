@@ -2,7 +2,7 @@
   //
   import * as DBHandler from '../database/db_util'
   
-  let response = await DBHandler.getSeries()
+  let response = await DBHandler.getAllSeries()
   let seriesData = response['data']
 
   let seriesData1 = [

@@ -1,10 +1,12 @@
 <script setup>
     import * as DBHandler from '../../database/db_util'
+    import { useRoute } from 'vue-router'
 
-    let response = await DBHandler.getSeries()
-    let seriesData = response['data']
-    console.log(seriesData)
+    const route = useRoute()
+    let series_data = (await DBHandler.getSingleSeriesByID({id: route.params.id})).data
+    let sections_data = (await DBHandler.getSectionsBySeriesTitle({series_title: series_data.title})).data
+    console.log(sections_data)
 </script>
 <template>
-    <h1>Testing Series details page {{ seriesData[0].title }}</h1>
+    <h1>Testing Series details page {{ series_data.title }}</h1>
 </template>
