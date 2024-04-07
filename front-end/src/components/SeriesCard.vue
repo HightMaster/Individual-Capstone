@@ -1,3 +1,21 @@
+<script setup>
+  import { ref } from 'vue'
+  import * as DBHandler from '../database/db_util'
+  import { watch } from 'vue';
+  //let props = defineProps(['series'])
+  let props = defineProps({series: Object})
+  let liked = ref(props.series.liked)
+
+  async function toggle(){
+    await DBHandler.toggleLiked({series_id: props.series.id})
+    this.liked = !this.liked
+  }
+
+  // async function getLiked(){
+  //   return (await DBHandler.getSingleSeriesByID({series_id: props.series.id})).data.liked
+  // }
+</script>
+
 <template>
     <v-card
       class="mx-auto"
@@ -23,7 +41,7 @@
       
       <v-card-actions>
         <v-dialog max-width="600">
-            <template v-slot:activator="{ props: activatorProps}">
+          <template v-slot:activator="{ props: activatorProps}">
               <v-btn
                 color="orange-lighten-2"
                 variant="text"
@@ -36,15 +54,23 @@
             <v-card :title="series.title">
               <v-card-text>
                 <v-form>
-                  <v-text-field prepend-icon="mdi-format-title" label="Series title" :placeholder="series.title" clearable
+                  <v-text-field prepend-icon="mdi-format-title" label="Series title" clearable
                   ></v-text-field>
-                  <v-text-field prepend-icon="mdi-image-area" label="img link" :placeholder="series.img" clearable
+                  <v-text-field prepend-icon="mdi-image-area" label="Image link" hint="Must be valid image URL" clearable
                   ></v-text-field>
-                  <v-text-field prepend-icon="mdi-image-text" label="Description" :placeholder="series.description" clearable
+                  <v-text-field prepend-icon="mdi-image-text" label="Description" clearable
+                  ></v-text-field>
+                  <v-text-field prepend-icon="mdi-star" label="Rating" hint="Must be between 0-10" clearable
                   ></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions>
+                <v-btn
+                  class="me-4"
+                  type="submit"
+                >
+                  Save
+                </v-btn>
                 <v-spacer></v-spacer>
                 <v-btn
                   icon="mdi-fullscreen-exit"
@@ -59,7 +85,7 @@
         {{ series.rating }}/10
         <v-btn
           :icon="liked ? 'mdi-heart' : 'mdi-heart-outline'"
-          @click="liked = !liked"
+          @click="toggle()"
         ></v-btn>
         
       </v-card-actions>
@@ -74,8 +100,3 @@
       </v-expand-transition>
     </v-card>
   </template>
-  <script setup>
-    import { ref } from 'vue'
-    let props = defineProps(['series'])
-    let liked = defineModel(false)
-  </script>

@@ -259,6 +259,20 @@ export async function deleteSectionBySeriesTitle({series_title, section_no}){
     }
 }
 
+export async function toggleLiked({series_id}){
+    try {
+        let series_data = (await getSingleSeriesByID({id: series_id})).data
+        await updateSeries({series_id: series_id, liked: !series_data.liked})
+        return {
+            response: "Request was succesfully transferred",
+        }
+    } catch (err) {
+        return {
+            response: err.response
+        }
+    } 
+}
+
 
 
 async function main() {
@@ -274,6 +288,7 @@ async function main() {
     //await deleteSectionByID({section_id: "8k5d86mv8qznrm4"})
     //await deleteSeries({series_id: (await getSingleSeriesByTitle("VGHS")).data.id})
     //console.log(await getSectionsBySeriesTitle({series_title: "VGHS"}))
+    //console.log(await toggleLiked({series_id: "3qda7m0d15o6wlt"}))
 }
 
 main()

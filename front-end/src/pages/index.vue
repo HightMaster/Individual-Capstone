@@ -4,39 +4,16 @@
   
   let response = await DBHandler.getAllSeries()
   let seriesData = response['data']
-
-  let seriesData1 = [
-    {
-      id: "asdfafsd",
-      title:"Avatar The Last Airbender",
-      liked: true,
-      rating: 8,
-      description:"Very Cool animated series",
-      img:"https://foreveryoungadult.com/wp-content/uploads/2021/10/Avatar-the-last-Airbender-Cover.jpg"
-    },
-    {
-      id: "asdfafsd11",
-      title:"Breaking Bad",
-      liked: true,
-      rating: 10,
-      description: "Epic thriller about a man going down the path of drugs for money",
-      img:"https://www.coverwhiz.com/uploads/tv/breaking-bad-season-2.jpg"
-    },
-    {
-      id: "asdfafsd867",
-      title:"The 100",
-      liked: false,
-      rating: 7,
-      description:"An incredible survival thriller about humans after an apocalypse",
-      img:"https://pbs.twimg.com/media/CumMf0GWgAAOsjJ?format=jpg&name=4096x4096"
-    }
-  ]
-
   let navItems = [
     {
-      text: "About",
-      icon: "mdi-information",
-      route: "/about"
+      route: "/",
+      icon: "mdi-home",
+      text: "Home"
+    },
+    {
+      route: "/about",
+      icon: "mdi-pencil",
+      text: "About"
     }
   ]
 </script>
@@ -48,12 +25,14 @@
     <v-container>
       <v-row >
         <v-col
-          v-for="series in seriesData"
-          :key="series.title"
+          v-for="(series, i) in seriesData"
+          :key="series.id"
           cols="12"
-          sm="2"
+          sm="8"
+          md="4"
+          lg="2"
         >
-          <SeriesCard :series="series"/>
+          <SeriesCard :series="seriesData[i]"/>
         </v-col>
       </v-row>
     </v-container>
