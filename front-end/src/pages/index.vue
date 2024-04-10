@@ -4,22 +4,10 @@
   
   let response = await DBHandler.getAllSeries()
   let seriesData = response['data']
-  let navItems = [
-    {
-      route: "/",
-      icon: "mdi-home",
-      text: "Home"
-    },
-    {
-      route: "/about",
-      icon: "mdi-pencil",
-      text: "About"
-    }
-  ]
 </script>
 
 <template>
-
+  <AppBar></AppBar>
   <NavBar :navItems="navItems"></NavBar>
   <Suspense>
     <v-container>

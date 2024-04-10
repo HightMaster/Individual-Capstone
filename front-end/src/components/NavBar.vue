@@ -21,5 +21,18 @@
 </template>
 
 <script setup>
-    const props = defineProps(['navItems'])
+    //const props = defineProps(['navItems'])
+
+    let navItems = [
+      {
+        route: "/",
+        icon: "mdi-home",
+        text: "Home"
+      },
+      {
+        route: "/about",
+        icon: "mdi-pencil",
+        text: "About"
+      }
+    ]
 </script>
