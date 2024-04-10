@@ -1,16 +1,19 @@
 <script setup>
   //
   import * as DBHandler from '../database/db_util'
-  
+  import { ref } from 'vue'
   let response = await DBHandler.getAllSeries()
-  let seriesData = response['data']
+  let seriesData = ref(response['data'])
 </script>
 
 <template>
   <AppBar></AppBar>
   <NavBar :navItems="navItems"></NavBar>
+  
   <Suspense>
     <v-container>
+      <v-row>
+      </v-row>
       <v-row >
         <v-col
           v-for="(series, i) in seriesData"
@@ -26,5 +29,8 @@
     </v-container>
   </Suspense>
 </template>
+
+<style>
+</style>
 
 
