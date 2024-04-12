@@ -289,6 +289,7 @@ async function main() {
     //await deleteSeries({series_id: (await getSingleSeriesByTitle("VGHS")).data.id})
     //console.log(await getSectionsBySeriesTitle({series_title: "VGHS"}))
     //console.log(await toggleLiked({series_id: "3qda7m0d15o6wlt"}))
+    //await createSeries({title: "Solo Leveling", section_count: "4", section_type: "Volume"})
 }
 
 main()

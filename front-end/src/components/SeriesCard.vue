@@ -4,11 +4,19 @@
   import { watch } from 'vue';
   //let props = defineProps(['series'])
   let props = defineProps({series: Object})
+  let emit = defineEmits(['updateCards'])
   let liked = ref(props.series.liked)
   let series_title = ref(props.series.title)
   let series_img = ref(props.series.img)
   let series_description = ref(props.series.description)
   let series_rating = ref(props.series.rating)
+
+  async function deleteItem(series_id){
+    console.log(series_id)
+    await DBHandler.deleteSeries({series_id: series_id})
+    console.log("series Deleted")
+    emit('updateCards')
+  }
 
   async function toggle(){
     await DBHandler.toggleLiked({series_id: props.series.id})
@@ -41,7 +49,7 @@
         ></v-img>
       </router-link>
       <v-card-title>
-        {{ series_title }}
+        {{ series.title }}
       </v-card-title>
   
       <v-card-subtitle>
@@ -51,13 +59,20 @@
       <v-card-actions>
         <v-dialog max-width="600">
           <template v-slot:activator="{ props: activatorProps}">
-              <v-btn
-                color="orange-lighten-2"
-                variant="text"
-                v-bind="activatorProps"
-              >
-                Edit
-              </v-btn>
+            <v-btn
+              color="orange-lighten-2"
+              variant="text"
+              v-bind="activatorProps"
+            >
+              Edit
+            </v-btn>
+            <v-btn
+              color="red-lighten-1"
+              variant="text"
+              @click="deleteItem(series.id)"
+            >
+              Delete
+            </v-btn>
           </template>
           <template v-slot:default="{ isActive }">
             <v-card :title="series_title">
