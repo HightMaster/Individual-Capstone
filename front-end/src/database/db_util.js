@@ -54,7 +54,7 @@ export async function getSingleSeriesByID({id}){
     }
 }
 
-export async function createSeries({title, liked = false, rating = 0, description ="", img = "", section_count, series_details = "", goodreads_link = "", rotten_tomatoes_link = "", wiki_link = "", imdb_link = "", flexible_link = "", section_type = "Season"}){
+export async function createSeries({title, liked = false, latest_position = "", genre = "", rating = 0, description ="", img = "", section_count, series_details = "", goodreads_link = "", rotten_tomatoes_link = "", wiki_link = "", imdb_link = "", flexible_link = "", section_type = "Season"}){
     const data = {
         "title": title,
         "liked": liked,
@@ -67,7 +67,9 @@ export async function createSeries({title, liked = false, rating = 0, descriptio
         "rotten_tomatoes_link": rotten_tomatoes_link,
         "wiki_link": wiki_link,
         "imdb_link": imdb_link,
-        "flexible_link": flexible_link
+        "flexible_link": flexible_link,
+        "latest_position": latest_position,
+        "genre": genre
     };
     try {
         const record = await pb.collection('series').create(data);
@@ -88,7 +90,7 @@ export async function createSeries({title, liked = false, rating = 0, descriptio
     }
 }
 
-export async function updateSeries({series_id, title, liked, rating, description, img, section_count, series_details, goodreads_link, rotten_tomatoes_link, wiki_link, imdb_link, flexible_link}){
+export async function updateSeries({series_id, title, genre, latest_position, liked, rating, description, img, section_count, series_details, goodreads_link, rotten_tomatoes_link, wiki_link, imdb_link, flexible_link}){
     try {
         let data = {
             "title": title,
@@ -102,7 +104,9 @@ export async function updateSeries({series_id, title, liked, rating, description
             "rotten_tomatoes_link": rotten_tomatoes_link,
             "wiki_link": wiki_link,
             "imdb_link": imdb_link,
-            "flexible_link": flexible_link
+            "flexible_link": flexible_link,
+            "genre": genre,
+            "latest_position": latest_position
         };
 
         const record = await pb.collection('series').update(series_id, data);
