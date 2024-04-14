@@ -5,10 +5,10 @@ const pb = new PocketBase('http://127.0.0.1:8090');
 // fetch a paginated records list
 
 
-export async function getAllSeries(){
+export async function getAllSeries(sort="created"){
     try {
         const records = await pb.collection('series').getFullList({
-            sort: 'created',
+            sort: sort,
         });
         return {
             response: "Request was succesfully transferred", 
