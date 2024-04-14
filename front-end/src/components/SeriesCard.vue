@@ -25,6 +25,7 @@
 
   async function submit(){
     await DBHandler.updateSeries({series_id: props.series.id, title: series_title.value, img: series_img.value, description: series_description.value, rating: series_rating.value})
+    emit('updateCards')
     console.log("Submit sent")
   }
 

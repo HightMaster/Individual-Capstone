@@ -181,6 +181,26 @@ export async function updateSectionBySeriesTitle({details, name, related_series_
     }
 }
 
+//This function can NOT change section_no or related_series id as it is
+export async function updateSectionByID({section_id, name, details}){
+    try {
+        const data = {
+            "name": name,
+            "related_series": undefined,
+            "details": details,
+            "no": undefined
+        };
+        const record = await pb.collection('sections').update(section_id, data);
+        return {
+            response: "Request was succesfully transferred"
+        }
+    } catch (err) {
+        return {
+            response: err.response
+        }
+    }
+}
+
 export async function getSectionBySeriesID({series_id, section_no}){
     try {
         const record = await pb.collection('sections').getFirstListItem(`related_series.id="${series_id}" && no="${section_no}"`, {

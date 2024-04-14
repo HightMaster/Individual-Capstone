@@ -14,16 +14,21 @@
         
     </template>
     <v-text-field
+        v-model="search"
+        placeholder="Search"
         variant="solo-filled"
         prepend-inner-icon="mdi-magnify"
-        placeholder="Search"
         hide-details
-        single-line
         clearable
     ></v-text-field>
     
     <template v-slot:append>
         <v-btn icon="mdi-dots-vertical"></v-btn>
+        
     </template>
     </v-app-bar>
 </template>
+
+<style scoped>
+
+</style>
