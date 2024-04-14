@@ -112,13 +112,12 @@ let filterItems = [
         <v-col align="left">
           <v-menu>
             <template v-slot:activator="{ props }">
-              <v-btn v-bind="props" color="orange-darken-3" variant="text" size="large" icon="mdi-filter">
+              <v-btn v-bind="props" color="blue-darken-3" variant="text" size="large" icon="mdi-filter">
               </v-btn>
             </template>
             <v-list>
               <v-list-item v-for="(item, index) in sortItems" :key="index" v-model="sortSelection"
-                @click="sortSeries(item)">{{
-    item }}
+                @click="sortSeries(item)">{{ item }}
                 <!-- <v-list-item-title @click="sortSeries(item)">{{ item }}</v-list-item-title> -->
               </v-list-item>
             </v-list>
@@ -126,7 +125,7 @@ let filterItems = [
           <v-dialog max-width="500">
             <template v-slot:activator="{ props: activatorProps }">
               <!-- <v-btn v-bind="activatorProps" color="orange-darken-3" variant="text">Create</v-btn> -->
-              <v-btn v-bind="activatorProps" icon="mdi-plus" variant="text" color="orange-darken-3" size="large">
+              <v-btn v-bind="activatorProps" icon="mdi-plus" variant="text" color="blue-darken-3" size="large">
               </v-btn>
             </template>
             <template v-slot:default="{ isActive }">

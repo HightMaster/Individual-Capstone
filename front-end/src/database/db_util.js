@@ -222,6 +222,7 @@ export async function getSectionBySeriesTitle({series_title, section_no}){
         let series_id = (await getSingleSeriesByTitle({title: series_title})).data.id
         const record = await pb.collection('sections').getFirstListItem(`related_series.id="${series_id}" && no="${section_no}"`, {
             expand: 'relField1,relField2.subRelField',
+            
         });
         return {
             response: "Request was succesfully transferred",
@@ -238,7 +239,7 @@ export async function getSectionsBySeriesTitle({series_title}){
     try {
         let series_id = (await getSingleSeriesByTitle({title: series_title})).data.id
         const records = await pb.collection('sections').getFullList({
-            sort: '-created',
+            sort: '+no',
             filter: `related_series.id="${series_id}"`
         });
         return {

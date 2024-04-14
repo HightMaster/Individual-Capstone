@@ -47,7 +47,7 @@ async function submit() {
 }
 </script>
 <template>
-  <NavBar :navItems="navItems"></NavBar>
+  <NavBar></NavBar>
   <!-- <AppBar></AppBar> -->
   <v-main class="d-flex justify-left hero" style="min-height: 100px;">
     <v-container class="">
@@ -73,8 +73,9 @@ async function submit() {
             </v-card-actions>
           </v-card>
         </v-col>
-        <v-col cols="1" align="center"><v-divider vertical></v-divider></v-col>
+        <v-col cols="1" align="center"><v-divider vertical thickness="2"></v-divider></v-col>
         <v-col>
+          <div class="max-height-column">
           <v-card color="grey-darken-4" class="mx-auto my-8 rounded-card" elevation="16" max-width="600">
             <!-- Card header -->
             <v-card-title>
@@ -85,7 +86,7 @@ async function submit() {
             <v-divider></v-divider>
 
             <!-- Card content -->
-            <v-card-text>
+            <v-card-text class="card-text-details">
               {{ series_data.description }}
             </v-card-text>
             <v-card-actions>
@@ -181,6 +182,7 @@ async function submit() {
               </template>
             </v-carousel>
           </v-container>
+        </div>
         </v-col>
       </v-row>
     </v-container>
@@ -202,7 +204,14 @@ async function submit() {
 }
 
 .card-text {
-  max-height: 500px;
+  max-height: 300px;
+  /* Set maximum height for card text */
+  overflow-y: auto;
+  /* Enable vertical scrollbar if text exceeds max height */
+}
+
+.card-text-details {
+  max-height: 250px;
   /* Set maximum height for card text */
   overflow-y: auto;
   /* Enable vertical scrollbar if text exceeds max height */
@@ -233,5 +242,10 @@ async function submit() {
   height: 50%;
   /* Adjust the height of the gradient overlay */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+}
+
+.max-height-column {
+  max-height: 880px; /* Adjust the maximum height as needed */
+  overflow-y: auto; /* Add vertical scrollbar when content exceeds maximum height */
 }
 </style>

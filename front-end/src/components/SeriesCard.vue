@@ -52,7 +52,7 @@ async function submit() {
     <v-card-actions>
       <v-dialog max-width="600">
         <template v-slot:activator="{ props: activatorProps }">
-          <v-btn color="orange-lighten-2" variant="text" v-bind="activatorProps">
+          <v-btn color="blue-lighten-1" variant="text" v-bind="activatorProps">
             Edit
           </v-btn>
           <v-btn color="red-darken-3" variant="text" @click="deleteItem(series.id)">
