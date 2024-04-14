@@ -46,7 +46,7 @@ async function submit() {
     </v-card-title>
 
     <v-card-subtitle>
-      {{ series_description }}
+      {{ series.description }}
     </v-card-subtitle>
 
     <v-card-actions>
@@ -60,7 +60,10 @@ async function submit() {
           </v-btn>
         </template>
         <template v-slot:default="{ isActive }">
-          <v-card :title="series_title">
+          <v-card :title="series_title" class="card-with-close-button">
+            <v-btn icon @click="isActive.value = false" class="close-button">
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
             <v-card-text>
               <v-form>
                 <v-text-field v-model="series_title" prepend-icon="mdi-format-title" label="Series title"
@@ -77,14 +80,12 @@ async function submit() {
               <v-btn class="me-4" type="submit" @click="submit">
                 Save
               </v-btn>
-              <v-spacer></v-spacer>
-              <v-btn icon="mdi-fullscreen-exit" text="Close" @click="isActive.value = false"></v-btn>
             </v-card-actions>
           </v-card>
         </template>
       </v-dialog>
       <v-spacer></v-spacer>
-      {{ series_rating }}/10
+      {{ series.rating }}/10
       <v-btn :icon="liked ? 'mdi-heart' : 'mdi-heart-outline'" @click="toggle()"></v-btn>
 
     </v-card-actions>
@@ -99,3 +100,16 @@ async function submit() {
       </v-expand-transition> -->
   </v-card>
 </template>
+
+<style scoped>
+.card-with-close-button {
+  position: relative;
+  /* Set position relative to contain absolute-positioned button */
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+</style>

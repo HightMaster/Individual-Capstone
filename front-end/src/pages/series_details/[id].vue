@@ -96,7 +96,10 @@ async function submit() {
                   </v-btn>
                 </template>
                 <template v-slot:default="{ isActive }">
-                  <v-card title="Series Details">
+                  <v-card title="Series Details" class="card-with-close-button">
+                    <v-btn icon @click="isActive.value = false" class="close-button">
+                      <v-icon>mdi-close</v-icon>
+                    </v-btn>
                     <v-card-text>
                       <v-form>
                         <v-text-field v-model="series_title" prepend-icon="mdi-format-title" label="Series title"
@@ -122,7 +125,6 @@ async function submit() {
                     <v-card-actions>
                       <v-btn text="Save" @click="submit()"></v-btn>
                       <v-spacer></v-spacer>
-                      <v-btn text="Close Dialog" @click="isActive.value = false"></v-btn>
                     </v-card-actions>
                   </v-card>
                 </template>
@@ -153,6 +155,9 @@ async function submit() {
                         </template>
                         <template v-slot:default="{ isActive }">
                           <v-card title="Section Info">
+                            <v-btn icon @click="isActive.value = false" class="close-button">
+                              <v-icon>mdi-close</v-icon>
+                            </v-btn>
                             <v-card-text>
                               <v-form>
                                 <v-text-field v-model="section_title" prepend-inner-icon="mdi-format-title"
@@ -166,7 +171,6 @@ async function submit() {
                             <v-card-actions>
                               <v-btn text="Save" @click="updateSection({ section_id: section.id })"></v-btn>
                               <v-spacer></v-spacer>
-                              <v-btn text="Close Dialog" @click="isActive.value = false"></v-btn>
                             </v-card-actions>
                           </v-card>
                         </template>
@@ -204,7 +208,16 @@ async function submit() {
   /* Enable vertical scrollbar if text exceeds max height */
 }
 
-.title-card {}
+.card-with-close-button {
+  position: relative;
+  /* Set position relative to contain absolute-positioned button */
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
 
 .gradient-overlay {
   position: relative;

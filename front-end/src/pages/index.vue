@@ -130,7 +130,10 @@ let filterItems = [
               </v-btn>
             </template>
             <template v-slot:default="{ isActive }">
-              <v-card title="Dialog">
+              <v-card title="Create New Series">
+                <v-btn icon @click="isActive.value = false" class="close-button">
+                  <v-icon>mdi-close</v-icon>
+                </v-btn>
                 <v-card-text>
                   <v-form>
                     <v-text-field v-model="create_title" prepend-icon="mdi-format-title" label="Series title"
@@ -152,8 +155,6 @@ let filterItems = [
 
                 <v-card-actions>
                   <v-btn text="Create" @click="createSeries"></v-btn>
-                  <v-spacer></v-spacer>
-                  <v-btn text="Close Dialog" @click="isActive.value = false"></v-btn>
                 </v-card-actions>
               </v-card>
             </template>
@@ -179,7 +180,16 @@ let filterItems = [
   content: '';
 }
 
+.card-with-close-button {
+  position: relative;
+  /* Set position relative to contain absolute-positioned button */
+}
 
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
 
 .search {
   border-radius: 20px;
