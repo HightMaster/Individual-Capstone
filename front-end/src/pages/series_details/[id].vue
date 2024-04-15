@@ -85,8 +85,11 @@ async function submit() {
             <v-card color="grey-darken-4" class="mx-auto my-8 rounded-card" elevation="16" max-width="600">
               <!-- Card header -->
               <v-card-title>
-                <div class="text-center">Series Details</div>
+                <div class="text-center">Last Position: {{ series_data.latest_position }}</div>
               </v-card-title>
+              <v-card-subtitle>
+                <div class="text-center">{{ series_data.title }}</div>
+              </v-card-subtitle>
 
               <!-- Divider -->
               <v-divider></v-divider>
