@@ -1,10 +1,10 @@
 Final Submission items
 - [DONE]*Canvas Project pages (PDF documents, downloaded from canvas page)
-- [AlMOST]*Progress (Weekly presentations, CLoC)
+- [WAITING]*Progress (Weekly presentations, CLoC)
 - [DONE]*Requirements (document)
 - [DONE]**Architecture/Design (Document)
 - **executive summary (document 1 page)
 - ***artifacts (Github repo items)
-- ***Manual (Document)
-- ***grading.docs (document)
+- [DONE]***Manual (Document)
+- [WAITING]***grading.docs (document)
 - ***Demonstrations (Video Clips of how project works)
