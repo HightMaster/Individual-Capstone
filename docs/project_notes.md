@@ -1,8 +1,8 @@
 Final Submission items
-- *Canvas Project pages (PDF documents, downloaded from canvas page)
-- *Progress (Weekly presentations, CLoC)
-- *Requirements (document)
-- **Architecture/Design (Document)
+- [DONE]*Canvas Project pages (PDF documents, downloaded from canvas page)
+- [AlMOST]*Progress (Weekly presentations, CLoC)
+- [DONE]*Requirements (document)
+- [DONE]**Architecture/Design (Document)
 - **executive summary (document 1 page)
 - ***artifacts (Github repo items)
 - ***Manual (Document)
