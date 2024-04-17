@@ -6,13 +6,16 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "vitest",
     "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
+    "@vue/test-utils": "^2.4.0-alpha.2",
     "core-js": "^3.34.0",
     "pocketbase": "^0.21.1",
     "roboto-fontface": "*",
+    "vitest": "^1.5.0",
     "vue": "^3.4.0",
     "vuetify": "^3.5.0"
   },
@@ -25,6 +28,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.22.0",
+    "jest": "^29.7.0",
     "sass": "^1.71.1",
     "unplugin-fonts": "^1.1.1",
     "unplugin-vue-components": "^0.26.0",

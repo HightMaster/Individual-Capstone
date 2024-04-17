@@ -4,7 +4,7 @@ Final Submission items
 - [DONE]*Requirements (document)
 - [DONE]**Architecture/Design (Document)
 - [DONE]**executive summary (document 1 page)
-- ***artifacts (Github repo items)
+- [WAITING]***artifacts (Github repo items, code, tests, everything else)
 - [DONE]***Manual (Document)
 - [WAITING]***grading.docs (document)
 - [DONE]***Demonstrations (Video Clips of how project works)
