@@ -3,6 +3,8 @@ Individual Project Capstone. Flutter
 
 Open a command prompt window:
 
+*Note: Before running the project, please run ```npm install``` in the both the front-end and root project directories. 
+
 DATABSE STARTUP
 Navigate to the /back-end folder in the project directory and run the command "pocketbase.exe serve"
 ```cd individual-capstone/back-end```
