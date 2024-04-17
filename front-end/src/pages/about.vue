@@ -8,14 +8,29 @@
                 <div class="about-content">
                     <h1 class="about-title">About Us</h1>
                     <p class="about-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Welcome to Median, your personalized hub for tracking your literary and entertainment adventures. Whether you're an avid reader, a binge-watcher, or a dedicated series enthusiast, our platform is designed to help you stay organized and engaged with all your favorite books, shows, and series.
+
+At Median, we understand the thrill of discovering a new story and the joy of diving deep into familiar worlds. Our mission is to enhance your entertainment experience by providing intuitive tools that allow you to keep tabs on what you've consumed, discover new gems, and connect with fellow enthusiasts.
+
+What sets us apart:
+
+Versatility: Track books, TV shows, and series all in one place. No need for multiple apps—manage everything seamlessly.
+
+Personalization: Customize your lists, ratings, and reviews to reflect your unique tastes and preferences. Our platform adapts to you.
+
+Insights: Gain valuable insights into your reading and viewing habits. 
+
+Whether you're a casual reader, a dedicated binge-watcher, or someone who loves exploring new series, Median is here to enrich your entertainment journey. Join us today and start tracking your adventures in a whole new way.
+
+
+
+
+
+
+
                     </p>
                     <p class="about-description">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.
+                        Median—because every story deserves to be remembered
                     </p>
                 </div>
             </v-container>

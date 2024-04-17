@@ -38,7 +38,7 @@ async function submit() {
   <v-card class="mx-auto" max-width="344" elevation="13">
     <router-link :to="'/series_details/' + series.id">
       <v-img height="300px" :src="series_img"
-        lazy-src="https://media.wired.com/photos/5f87340d114b38fa1f8339f9/master/w_1600%2Cc_limit/Ideas_Surprised_Pikachu_HD.jpg"
+        lazy-src="https://www.ledr.com/colours/grey.jpg"
         aspect-ratio="4/3" cover></v-img>
     </router-link>
     <v-card-title>
